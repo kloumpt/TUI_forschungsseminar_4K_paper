@@ -1,0 +1,11 @@
+*
+!.gitignore
+
+!paper.tex
+!paper.pdf
+!README*
+
+!IEEEtran.cls
+
+!res/
+!res/*
