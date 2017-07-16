@@ -8,7 +8,9 @@
 % Graphics
 \usepackage{graphicx}
 \graphicspath{{images/}}
+\usepackage{subfigure}
 \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\usepackage{booktabs}
 
 % Math
 \usepackage[cmex10]{amsmath}
@@ -64,11 +66,7 @@ Cool Introduction here
 
 \section{Test Preparation}
 \subsection{Video Selection}
-\subsubsection{Criteria}
-(Resolution, Bitrate, ...)
-
-\subsubsection{Datasets}
-(Harmonic, Big Buck Bunny, Cablelabs)
+\input{sections/video_selection}
 
 \subsection{Encoding Parameters}
 \input{sections/encoding}
