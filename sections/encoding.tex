@@ -27,5 +27,10 @@ Two different presets are used for the sequence encodings. The first is a simple
 	\label{fig:automation}
 \end{figure}
 
-
 \subsubsection{Encoding Automation}
+We automate the whole process for downloading, preprocessing and encoding the source videos using pydoit \cite{web:pydoit}.
+
+The process is illustrated in figure \ref{fig:automation} and starts with the source preparation (Blue box). After downloading the sequences (1) they are cut to 10 seconds length and saved as ProRes HQ with UHD-1 resolution (2). Additionally, h.264 previews are generated at a lower resolution of 1440p to allow reviewing of sequences on slower devices.
+
+
+
