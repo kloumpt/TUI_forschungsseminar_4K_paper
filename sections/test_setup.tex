@@ -1,3 +1,70 @@
-\subsubsection{Requirements}
+Several steps have been followed in order to enable the acquisition of meaningful data from the test participants. Theses steps included defining the test environment, choosing a rating framework and creating additional question that may help inferring informations about the participants and their way of rating content.
 
-\subsubsection{Testing Framework}
+\subsubsection{Test Environment}
+In order to make the results of our research reproducible the ITU recommendations \cite{rec1998p} have been followed. 
+The key point being:
+\begin{itemize}
+	\item Viewing distance
+	\item Peak luminance of the screen
+	\item Ratio of luminance of the screen in different conditions
+	\item Ratio of luminance of background behind picture monitor to peak luminance
+	\item Chromaticity of background
+	\item Background room illumination
+\end{itemize}
+
+As performing test following these specifications is common in the Ilmenau's Technical University, a room meeting the requirements was already available and therefore used.
+
+	
+\subsubsection{Rating Framework}
+The testing procedure which seems the more suited to the case was the ACR \cite{rec1998p} where different versions of an original sequence are showed to a test participant. 
+
+For each sequence the participant issues categorical ratings from any of these 5 answers: 
+\begin{itemize}
+	\item Excellent
+	\item Good
+	\item Fair
+	\item Poor
+	\item Bad
+\end{itemize}
+
+
+The workflow of this rating framework is the following (see fig. \ref{fig:workflow:state_machine}):
+\begin{enumerate}
+	\item[1] Rating of reference videos
+	\item[2] Submission of participants personal info
+	\item[3] Rating of 108 videos
+	\item[4] Submission of feedback questions (see "Additional collected data")
+\end{enumerate}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=3.0in]{rating_workflow}
+	\caption{Rating workflow}
+	\label{fig:workflow:state_machine}
+\end{figure}
+
+\subsubsection{Additional collected data}
+In order to gain more knowledge about the users behaviour, additional data is collected from the participants.
+
+One of the suggestions of the ITU recommendation paper being the usage of several test questions in addition to the ratings \cite{rec1998p}, the following questions have been asked at the end of each rating session:
+
+\begin{itemize}
+	\item Presence of blocky artefacts
+	\item Visible bands of colour
+	\item Smoothness of the playback
+	\item Have you seen 4K content before?
+	\item Have you seen content on a 4k screen before?
+	\item How sure were you about the rating that you provided?
+\end{itemize}
+
+
+
+
+These idea behind these question is dual as these questions may translate how users percieve/are sensitive to video features as well as how users may clearly express their perceptions. As it has already been noticed in previous experiments and in discussions with test participants: users may still rate using a different scales, thus spreading the final MOS or falsely being classified as outlier when their ratings may only represent a shift from the overall population. 
+
+Moreover, mouse interactions have been collected during the rating of each sequence. The intent behind this is that as the MOS scale doesn't allow detailed answers some participants may hesitate between two answers and change their answers or hover with their mouse around some answers. Also, answering speed, which could be an indicator of a participant skipping answers or to the contrary being strongly confident of his answers. We believe that several informations can be extracted from these kind of behaviours:
+\begin{itemize}
+	\item Confidence in the participant sequence rating
+	\item Confidence in the participant overall rating
+	\item Intermediate scores (eg: 4.5)
+\end{itemize}
