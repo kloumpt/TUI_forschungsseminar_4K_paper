@@ -15,7 +15,7 @@ Generally, the challenge is to extract 10 seconds sequences from the original vi
 
 One problem of the video sequences from the database is that even they have a high bit rate and are stored as ProRes, no conclusion referring to the contained visual quality can be done. If the videos were available in RAW, this would be preferred because RAW assures the least compression and no lost of information regarding the meta data.
 For this reason a preselection with a system, able to play 4k content in ProRes with high bit rates and connected to a 4k screen, was applied.
-The remaining reference videos are 6 source clips, each with a duration of 10 seconds. All the files have got a resolution of 3840x2160 pixels and are stored in the ProRes format. Because this format is a 10 bit codec only \cite{web:ProRes}, the original color depth of each video file can not be determined.
+The remaining reference videos are 6 source clips, each with a duration of 10 seconds. All the files have got a resolution of 3840x2160 pixels and are stored in ProRes. Because this format is a 10 bit codec only \cite{web:ProRes}, the original color depth of each video file can not be determined.
 Further specific information about the reference videos are shown in Table \ref{tab:Specifications}, e.g. Air Show, a video from the Harmonic Database, available with 59.94 fps and a bit rate of 1703 Mbit/s. For obtaining the reference video with a duration of 10 seconds the extraction starts at the 48.5 second of the source video file.
 
 \begin{table}[hbt!]
@@ -38,11 +38,6 @@ Further specific information about the reference videos are shown in Table \ref{
 		\bottomrule
 	\end{tabular}
 \end{table}
-
-One problem of the video sequences from the database is that even they have a high bit rate and are stored as ProRes, no conclusion referring to the contained visual quality can be done. If the videos were available in RAW, this would be preferred because RAW assures the least compression and no lost of information regarding the meta data.
-For this reason a preselection with a system, able to play 4k content in ProRes with high bit rates and connected to a 4k screen, is applied.
-The remaining reference videos are 6 source clips, each with a duration of 10 seconds. All the files have got a resolution of 3840x2160 pixels and are stored in the ProRes format. Because this format is a 10 bit codec only, the original color depth of each video file can not be determined.
-Further specific informations about the reference videos are shown in Table \ref{tab:Specifications}, e.g. Air Show, a video from the Harmonic Database, available with 59.94 fps and a bit rate of 1703 Mbit/s. To get out of it a video for the test, a 10 second sequence is extracted that starts at the 48.5 second of the source video file.
 
 They contain a wide range of high-level features (animation, camera motion, people, water) and low-level characteristics (brightness, contrast, texture, motion, color variance, sharpness) as can be seen in Figure \ref{fig:OverviewReferenceSequences}.
 
@@ -82,7 +77,9 @@ They contain a wide range of high-level features (animation, camera motion, peop
 	\label{fig:OverviewReferenceSequences}
 \end{figure}
 
-We further analyzed the information about the spatial and temporal changes between the frames of each reference video with SITI \cite{web:SITI}, a command-line-based tool that refers to ITU-T P.910, and diagrammed them in Figure \ref{fig:SITI}. As expected, Air Show includes the smallest spatial and temporal changes in comparison with the other reference videos due to the slightly changing and low complex scenario. Whereas the cartoon Big Buck Bunny shows a large range of temporal information by reason of camera movement and Snow Monkeys the highest spatial information according to fine structures and details.
+We further analyzed the information about the spatial and temporal changes between the frames of each reference video with SITI \cite{web:SITI}, a command-line-based tool that refers to ITU-T P.910, and diagrammed them in Figure \ref{fig:SITI}.
+There the spatial information is computed by the maximum standard derivation of the results of a sobel filter applied on a frame. Furthermore the temporal information is the maximum standard derivation of the motion difference between two frames at the same location in space.
+As expected, Air Show includes the smallest spatial and temporal changes in comparison with the other reference videos due to the slightly changing and low complex scenario. Whereas the cartoon Big Buck Bunny shows a large range of temporal information by reason of camera movement and Snow Monkeys the highest spatial information according to fine structures and details.
 For generating the test data set the selected reference videos are encoded with different quality parameters.
 
 \begin{figure}[hbt!]
