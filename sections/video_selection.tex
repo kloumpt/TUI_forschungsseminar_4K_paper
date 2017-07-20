@@ -1,19 +1,22 @@
+The selection of suitable sequences for the test is based on technical considerations and content. 
+\newline
+
 \subsubsection{Preconsiderations}
 There exists only a few public 4k video databases. They differ in content (scenario, field size, camera movement, illumination condition) as well as in technical aspects (resolution, frame rate, bit rate and color bit depth). 
 To obtain reference video files for the subjective test, parts of the 4k content from the databases are used (also called source video files).
 For our test we want to have a large variety between the reference video files to evoke different encoding properties. 
 All the reference videos should have a duration of 10 seconds with no cuts inside.
-To avoid the influence of judder, the smallest permitted frame rate of the source videos is 50 frames per second (fps). Furthermore the smallest resolution considered to be 3840x2160. If the source videos are not 4k (4096x2160 pixels) they will be upscaled before distortion. Moreover the frame rate of the reference video files is being adapted to consistent 50fps.
+To avoid the influence of judder, the smallest permitted frame rate of the source videos is 50 frames per second (fps). Furthermore the smallest resolution considered to be 3840x2160. Moreover the frame rate of the reference video files is being adapted to consistent 50 fps and the resolution to 3840x2160 pixels.
 \newline
 
 \subsubsection{Dataset Preparation}
 For obtaining a good variety of video sequences three data bases are used: The Harmonic \cite{web:harmonic} which contains 18 different video files, Cable Labs \cite{web:cablelabs} with 9 relevant 4k contents and the Blender Foundation \cite{web:bbb} for receiving the cartoon Big Buck Bunny. They  are partial under the creative commence license and all of them are available in the ProRes format, except of Big Buck Bunny where the 4k video content can be downloaded only as a compressed video file, however there also exist high quality PNGs for all the frames of the cartoon. In order to generate a high quality reference video with the frames of Big Buck Bunny, an automatisation script is used to find a sequence with a duration of 10 seconds, to download the respective images and to encode them as a video file.
 Generally, the challenge is to extract 10 seconds sequences from the original video files with no cut inside because there exists only a few.
 
-One problem of the video sequences from the database is that even they have a high bit rate and are stored as ProRes, no conclusion referring to the contained visual quality can be done. 
-For this reason a preselection with a very powerful system, able to play 4k content in ProRes with high bit rates and connected to a 4k screen, was applied.
+One problem of the video sequences from the database is that even they have a high bit rate and are stored as ProRes, no conclusion referring to the contained visual quality can be done. If the videos were available in RAW, this would be preferred because RAW assures the least compression and no lost of information regarding the meta data.
+For this reason a preselection with a system, able to play 4k content in ProRes with high bit rates and connected to a 4k screen, is applied.
 The remaining reference videos are 6 source clips, each with a duration of 10 seconds. All the files have got a resolution of 3840x2160 pixels and are stored in the ProRes format. Because this format is a 10 bit codec only, the original color depth of each video file can not be determined.
-Further specific informations about the reference videos are shown in Table \ref{tab:Specifications}.
+Further specific informations about the reference videos are shown in Table \ref{tab:Specifications}, e.g. Air Show, a video from the Harmonic Database, available with 59.94 fps and a bit rate of 1703 Mbit/s. To get out of it a video for the test, a 10 second sequence is extracted that starts at the 48.5 second of the source video file.
 
 \begin{table}[!t]
 	\renewcommand{\arraystretch}{1.3}
@@ -74,3 +77,11 @@ They contain a wide range of high-level features (animation, camera motion, peop
 	\label{fig:OverviewReferenceSequences}
 \end{figure}
 
+Informations about the spatial and temporal changes between the frames of each reference video are calculated with SITI \cite{web:SITI}, a command-line-based tool that refers to ITU-T P.910, and diagrammed in Figure \ref{fig:SITI}. As expected, Air Show includes the smallest spatial and temporal changes in comparison with the other reference videos due to the slightly changing and low complex scenario. Whereas the cartoon Big Buck Bunny shows a large range of temporal informations by reason of camera movement and Snow Monkeys the highest spatial informations according to fine structures and details.
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=3.5in]{SITI}
+	\caption{Spatial and temporal informations of the reference video files. Each cross represents one frame}
+	\label{fig:SITI}
+\end{figure}
