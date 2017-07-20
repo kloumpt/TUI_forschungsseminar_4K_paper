@@ -1,9 +1,9 @@
-The following section illustrates how the sequences were encoded for the perceptual test and the choice of encoding parameters.
+The following section illustrates how the sequences are encoded for perceptual test and how we choose our selection of bitrate targets to limit the test duration. 
 
 \begin{figure}[bht!]
 	\centering
 	\includegraphics[width=3.5in]{vmaf_bitrates}
-	\caption{VMAF scores for 25 different bitrates at 3 resolutions. The encoded bitrates and the VMAF scores are averaged between the 6 sequences and form the abscissa (Log) and ordinate respectively.}
+	\caption{Average VMAF scores for 25 different bitrates at 3 resolutions. The encoded bitrates and the VMAF scores are averaged between the 6 sequences and form the abscissa (Log) and ordinate respectively.}
 	\label{fig:vmaf:bitrates}
 \end{figure}
 
@@ -13,14 +13,17 @@ Two different presets are used for the sequence encodings, a "na\"{\i}ve" (P.1) 
 \subsubsection{Selection of Bitrates}
 Video Multi-Method Assessment Fusion (VMAF) is a full reference metric for estimating human perception of video quality \cite{lin2013:mmf}. We use it because it provides a better estimate of subjective quality than single metrics like SSIM or VIF.
 
-To estimate relevant HEVC bitrates for our source content we sample the VMAF scores at 25 bitrates on a logarithmic scale for our 3 different resolutions (540p, 1080p, 2160p). The reference sequences are resampled to a fixed 50 frames per seconds to avoid frame rate differences, while the distorted sequences are downsampled, encoded with CBR rate control and upsampled to UHD-1 again using lanczos resampling. Both presets use 4:2:0 chroma subsampling to be close to the typical use-case of webvideo. The resulting VMAF scores exhibit an overlap between different resolutions and the final encoding bitrates are chosen near those intersections. Figure \ref{fig:vmaf:bitrates} shows the sampled scores (foreground) and the target rates (background). The bitrates are chosen at least 2 bitrate-samples away from an intersection with the next quality, except for the lower 1080p-bound where this is not possible due to encoder restrictions, as is fails to encode for even lower bitrates.
+To estimate relevant HEVC bitrates for our source content we sample the VMAF scores at 25 bitrates on a logarithmic scale for our 3 different resolutions (540p, 1080p, 2160p). The reference sequences are resampled to a fixed 50 frames per seconds to avoid frame rate differences, while the distorted sequences are downsampled, encoded with CBR rate control and upsampled to UHD-1 again using lanczos resampling. Both presets use 4:2:0 chroma subsampling to be close to the typical use-case of webvideo. The resulting VMAF scores exhibit an overlap between different resolutions and the final encoding bitrates are chosen near those intersections. Figure \ref{fig:vmaf:bitrates} shows the sampled scores with the target rates in the background. We choose the target bitrates at least 2 bitrate-samples away from an intersection with the next quality, except for the lower 1080p-bound where it is not possible to lower the bitrate any further due to encoder restrictions. This should ensure a relevant sampling of the MOS-bitrate space for the subjective test.
 
 \begin{figure}[bht!]
 	\centering
 	\includegraphics[width=3.5in]{vmaf_final}
-	\caption{VMAF scores of encoded videos for both presets. The encoded bitrates and the VMAF scores are averaged between the 6 sequences for each preset and form the abscissa (Log) and ordinate respectively.}
+	\caption{Average VMAF scores of encoded videos for both presets. The encoded bitrates and the VMAF scores are averaged between the 6 sequences for each preset and form the abscissa (Log) and ordinate respectively.}
 	\label{fig:vmaf:encoded}
 \end{figure}
+
+The average VMAF scores of the two presets at the chosen bitrates can be seen in Figure \ref{fig:vmaf:encoded}. The target bitrates can again be seen in the background. The scores of the "expert" preset are consistently higher than the ones for the "na\"{\i}ve" preset at matching bitrates. Furthermore the "expert" preset saves bitrate by resorting to an acceptable level of quality, while the "na\"{\i}ve" presets bitrates are very close to the targets.
+
 
 \begin{figure}[bht!]
 	\centering
