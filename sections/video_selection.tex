@@ -18,7 +18,7 @@ For this reason a preselection with a system, able to play 4k content in ProRes 
 The remaining reference videos are 6 source clips, each with a duration of 10 seconds. All the files have got a resolution of 3840x2160 pixels and are stored in the ProRes format. Because this format is a 10 bit codec only \cite{web:ProRes}, the original color depth of each video file can not be determined.
 Further specific information about the reference videos are shown in Table \ref{tab:Specifications}, e.g. Air Show, a video from the Harmonic Database, available with 59.94 fps and a bit rate of 1703 Mbit/s. For obtaining the reference video with a duration of 10 seconds the extraction starts at the 48.5 second of the source video file.
 
-\begin{table}[!t]
+\begin{table}[hbt!]
 	\renewcommand{\arraystretch}{1.3}
 	\centering
 	\caption{Meta data of the video files. The timestamps are the start positions of the extraction of 10 second sequences from the source files, where mm stands for minutes, ss for seconds and ms for milliseconds respectively. Further shortcuts: H = Harmonic, B = Blender Foundation, C = Cable Labs}
@@ -27,7 +27,7 @@ Further specific information about the reference videos are shown in Table \ref{
 		%\cline{2-6}
 		\toprule
 		Sequence Name       & Frame Rate & Bit rate & Timestamps & Source\\
-							& fps  	   & Mbits/s    & mm:ss.ms   & \\
+		& fps  	   & Mbits/s    & mm:ss.ms   & \\
 		\midrule
 		Air Show            & 59.94    & 1703 & 00:48.500  &   H  \\
 		Big Buck Bunny      & 60       & 2304 & 05:47.000  &   B  \\
@@ -39,9 +39,14 @@ Further specific information about the reference videos are shown in Table \ref{
 	\end{tabular}
 \end{table}
 
+One problem of the video sequences from the database is that even they have a high bit rate and are stored as ProRes, no conclusion referring to the contained visual quality can be done. If the videos were available in RAW, this would be preferred because RAW assures the least compression and no lost of information regarding the meta data.
+For this reason a preselection with a system, able to play 4k content in ProRes with high bit rates and connected to a 4k screen, is applied.
+The remaining reference videos are 6 source clips, each with a duration of 10 seconds. All the files have got a resolution of 3840x2160 pixels and are stored in the ProRes format. Because this format is a 10 bit codec only, the original color depth of each video file can not be determined.
+Further specific informations about the reference videos are shown in Table \ref{tab:Specifications}, e.g. Air Show, a video from the Harmonic Database, available with 59.94 fps and a bit rate of 1703 Mbit/s. To get out of it a video for the test, a 10 second sequence is extracted that starts at the 48.5 second of the source video file.
+
 They contain a wide range of high-level features (animation, camera motion, people, water) and low-level characteristics (brightness, contrast, texture, motion, color variance, sharpness) as can be seen in Figure \ref{fig:OverviewReferenceSequences}.
 
-\begin{figure}[!t]
+\begin{figure}[hbt!]
 	\begin{center}
 		%
 
@@ -80,7 +85,7 @@ They contain a wide range of high-level features (animation, camera motion, peop
 We further analyzed the information about the spatial and temporal changes between the frames of each reference video with SITI \cite{web:SITI}, a command-line-based tool that refers to ITU-T P.910, and diagrammed them in Figure \ref{fig:SITI}. As expected, Air Show includes the smallest spatial and temporal changes in comparison with the other reference videos due to the slightly changing and low complex scenario. Whereas the cartoon Big Buck Bunny shows a large range of temporal information by reason of camera movement and Snow Monkeys the highest spatial information according to fine structures and details.
 For generating the test data set the selected reference videos are encoded with different quality parameters.
 
-\begin{figure}[!t]
+\begin{figure}[hbt!]
 	\centering
 	\includegraphics[width=3.5in]{SITI}
 	\caption{Spatial and temporal information of the reference video files. Each dot represents one frame}
