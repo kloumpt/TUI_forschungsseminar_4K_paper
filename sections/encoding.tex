@@ -3,7 +3,7 @@ As one of the focus points of this paper the choice of encoding parameters and t
 \subsubsection{Encoding Presets}
 We use the open x265 encoder for our experiment as it offers good performance and integration in the FFmpeg toolchain. Two different presets are used for the sequence encodings, a "na\"{\i}ve" (1) and an "expert" preset (2). The "na\"{\i}ve" preset is a simple \textit{CBR} (Constant Bitrate) encoding, whereas the "expert" preset is a 2-pass encoding with a Quality-Control pass followed by a Bitrate-Control pass.  Every sequence is encoded with both presets at 3 resolutions (540p, 1080p, 2160p) and 3 bitrates for each resolution. The following section goes into detail on how we select those bitrates.
 
-\begin{figure}[htb!]
+\begin{figure}[thb!]
 	\centering
 	\includegraphics[width=3.5in]{vmaf_bitrates}
 	\caption{Average \textit{VMAF} scores for 25 different bitrates at 3 resolutions. The encoded bitrates and the \textit{VMAF} scores are averaged between the 6 sequences and form the abscissa (Log) and ordinate respectively.}
@@ -17,7 +17,7 @@ To estimate relevant \textit{HEVC} encoding bitrates for our source content we s
 
 The resulting \textit{VMAF} scores exhibit an overlap between different resolutions and the final encoding bitrates are chosen near those intersections. Figure \ref{fig:vmaf:bitrates} shows the sampled scores with the target rates in the background. We choose the target bitrates at least 2 bitrate-samples away from an intersection with the next quality, except for the lower 1080p-bound where it is not possible to lower the bitrate any further due to encoder restrictions. This should ensure a relevant sampling of the \textit{MOS}-bitrate space for the subjective test.
 
-\begin{figure}[htb!]
+\begin{figure}[thb!]
 	\centering
 	\includegraphics[width=3.5in]{vmaf_final}
 	\caption{Average \textit{VMAF} scores of encoded videos for both presets. The encoded bitrates and the \textit{VMAF} scores are averaged between the 6 sequences for each preset and form the abscissa (Log) and ordinate respectively.}
