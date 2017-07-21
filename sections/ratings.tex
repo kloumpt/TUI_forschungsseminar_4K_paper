@@ -1,50 +1,61 @@
-(MOS Results, Plots and stuff)
+In this section we look at the results of the perceptual test and analyze them.
 
-Pure result numbers here only, analysis in evaluation
+\textbf{Compare preset \textit{MOS}}
 
-\textbf{Compare preset MOS}
+\subsubsection{Outliers}
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=3in]{participant_mos_violin}
+	\caption{Difference between average MOS and the invididual ratings for each participant}
+	\label{fig:result:participant_violin}
+\end{figure}
 
-\begin{figure*}[t!]
+We calculated the average of all \textit{MOS} and compared the differences of each participants ratings to the average. This can be seen in \ref{fig:result:participant_violin}. All participants apart from number 12 and 17 fall into a difference range of $[-0.5, 0.5]$ to the mean. For this reason we exclude the rating data of participants 12 and 17 from our further analysis.
+
+\subsubsection{\textit{MOS} per Sequence}
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=3.5in]{mos_per_sequence}
+	\caption{\textit{MOS} distribution per sequence over all versions of the sequence - 1: Air Show, 2: Big Buck Bunny, 3: Fjord, 4: Moment of Intensity, 5: Snow Monkeys, 6: Streets of India}
+	\label{fig:result:mos_per_sequence}
+\end{figure}
+
+In Figure \ref{fig:result:mos_per_sequence} we show the \textit{MOS} for each sequence aggregated over all versions of this sequence. We see that the distributions are similar over all sequences and that every sequence has ratings on all steps of the \textit{ACR} (Absolute Category Rating) scale. This suggests a broad range of qualities in the encoded video.
+
+\subsubsection{\textit{MOS} per Sequence}
+\begin{figure*}[htb!]
 	\centering
 	\includegraphics[width=3.5in]{correlation_bitrate_mos_p1}
 	\includegraphics[width=3.5in]{correlation_bitrate_mos_p2}
-	\caption{Correlation between bitrate and MOS for both encoding presets. The center line represents a median and the outer line the 25th and 75th percentile of MOS for the 6 sequences.}
+	\caption{Correlation between bitrate and \textit{MOS} for both encoding presets. The center line represents a median and the outer line the 25th and 75th percentile of \textit{MOS} for the 6 sequences.}
 	\label{fig:result:correlation_bitrate_mos}
 \end{figure*}
 
-The Distribution of MOS values for each preset at different resolutions is shown in Figure \ref{fig:result:correlation_bitrate_mos}.
-
-The "expert" preset is not using all available bitrate in critical low-bitrate situations. (Drop-Off for 1080p MOS), can already be predicted from VMAF plot.
-
-
-\textbf{Participant outliers}
-\begin{figure}[bht!]
-	\centering
-	\includegraphics[width=3.5in]{participant_mos_violin}
-	\caption{}
-	\label{fig:result:participant_violin}
-\end{figure}
-\\
-
-\textbf{Compare MOS with vmaf (correlation?)}
-\begin{figure}[bht!]
-	\centering
-	\includegraphics[width=3.5in]{participant_mos_violin}
-	\caption{}
-	\label{fig:result:participant_violin}
-\end{figure}
-\\
-
-\textbf{Bitrate savings}
-\begin{figure}[bht!]
+\begin{figure}[htb!]
 	\centering
 	\includegraphics[width=3.5in]{bitrate_savings}
 	\caption{}
 	\label{fig:result:bitrate_savings}
 \end{figure}
-\begin{figure}[bht!]
+\begin{figure}[htb!]
 	\centering
 	\includegraphics[width=3.5in]{quality_difference}
 	\caption{}
 	\label{fig:result:quality_difference}
 \end{figure}
+
+The Distribution of \textit{MOS} values for each preset at different resolutions is shown in Figure \ref{fig:result:correlation_bitrate_mos}.
+
+The "expert" preset is not using all available bitrate in critical low-bitrate situations. (Drop-Off for 1080p \textit{MOS}), can already be predicted from VMAF plot.
+
+
+\textbf{Compare \textit{MOS} with \textit{VMAF} (correlation?)}
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=3in]{correlation_vmaf_mos}
+	\caption{Correlation between average \textit{VMAF} scores and \textit{MOS} for each preset and resolution}
+	\label{fig:result:correlation_vmaf_mos}
+\end{figure}
+
+The correlation between our determined \textit{MOS} and the precomputed \textit{VMAF} scores is very high at 93\%. This can also be seen in Figure \ref{fig:result:correlation_vmaf_mos}, where we illustrate the correlation for each preset per resolution.
+\\
