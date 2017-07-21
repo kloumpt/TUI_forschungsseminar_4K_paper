@@ -1,7 +1,7 @@
-The following section focuses on the encoding of sequences for the perceptual test and how we choose our selection of bitrate targets to limit the test duration.
+As one of the focus points of this paper the choice of encoding parameters and the video preprocessing are of main importance. This section will first cover the two different encoding presets, go over the method which is used to derive the target bitrates and finalize with a description of the process automation.
 
 \subsubsection{Encoding Presets}
-We use the open x265 encoder for our experiment as it offers good performance and integration in the FFmpeg toolchain. Two different presets are used for the sequence encodings, a "na\"{\i}ve" (P.1) and an "expert" preset (P.2). The "na\"{\i}ve" preset is a simple \textit{CBR} (Constant Bitrate) encoding, whereas the "expert" preset is a 2-pass encoding with a Quality-Control pass followed by a Bitrate-Control pass.  Every sequence is encoded with both presets at 3 resolutions (540p, 1080p, 2160p) and 3 bitrates for each resolution. The following section goes into detail on how we select the bitrates.
+We use the open x265 encoder for our experiment as it offers good performance and integration in the FFmpeg toolchain. Two different presets are used for the sequence encodings, a "na\"{\i}ve" (P.1) and an "expert" preset (P.2). The "na\"{\i}ve" preset is a simple \textit{CBR} (Constant Bitrate) encoding, whereas the "expert" preset is a 2-pass encoding with a Quality-Control pass followed by a Bitrate-Control pass.  Every sequence is encoded with both presets at 3 resolutions (540p, 1080p, 2160p) and 3 bitrates for each resolution. The following section goes into detail on how we select those bitrates.
 
 \begin{figure}[htb!]
 	\centering
@@ -39,8 +39,8 @@ We automate the whole process for downloading, preprocessing and encoding the so
 
 The whole process is illustrated in Figure \ref{fig:automation} and starts with the source preparation (A). After download of the sequences (1) they are cut to 10 seconds length and saved as ProRes HQ with \textit{UHD-1} resolution (2). Additionally, \textit{MPEG4-AVC} previews are generated at a lower resolution of 1440p to allow review of the sequences on slower devices.
 
-After the initial processing the bitrate estimation is performed (B) using the \textit{VMAF} metric \cite{lin2013:mmf}. The videos are brought to the same frame rate of 50fps (4) and encoded with \textit{CBR} at 25 different bitrates (5). The average \textit{VMAF} score of each video is analyzed with the \textit{VMAF} Development Kit (VDK) \cite{web:vdk} and saved as a json file (6). All of the scores are then aggregated into a single CSV for plotting and further analysis (7).
+After the initial processing the bitrate estimation is performed (B) using the \textit{VMAF} metric \cite{lin2013:mmf}. The videos are brought to the same frame rate of 50fps (4) and encoded with \textit{CBR} at 25 different bitrates (5). The average \textit{VMAF} score of each video is analyzed with the \textit{VMAF} Development Kit (VDK) \cite{web:vdk} and saved as a json file (6). All of the average scores are then aggregated into a single CSV for plotting and further analysis (7). The target bitrates can then derived from these scores.
 
-The last step is the main encoding (C). It can only start after the target bitrates have been selected manually. The sequences are encoded first with the two presets (8) and transcoded to a lossless format (ffvhuff) afterwards, to allow for fast and consistent playback as well as archiving of the video material.
+The last step is the main encoding (C). It can only start after the target bitrates have been specified in the configuration. The sequences are encoded first with the two presets (8) and transcoded to a lossless format (ffvhuff) afterwards, to allow for fast and consistent playback as well as archiving of the video material.
 
 
