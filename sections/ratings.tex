@@ -8,7 +8,7 @@ In this section we look at the results of the perceptual test and analyze them.
 	\label{fig:result:participant_violin}
 \end{figure}
 
-We calculated the average of all \textit{MOS} and compared the differences of each participants ratings to the average. This can be seen in \ref{fig:result:participant_violin}. All participants apart from number 12 and 17 fall into a difference range of $[-0.5, 0.5]$ to the mean. For this reason we exclude the rating data of participants 12 and 17 from our further analysis.
+We calculated the average of all \textit{MOS} and compared the differences of each participants ratings to the average. This can be seen in Figure \ref{fig:result:participant_violin}. All participants apart from number 12 and 17 fall into a difference range of $[-0.5, 0.5]$ to the mean. For this reason we exclude the rating data of participants 12 and 17 from our further analysis.
 
 
 
@@ -51,6 +51,7 @@ The Distribution of \textit{MOS} values for each preset at different resolutions
 The "expert" preset quality is higher at 2160p resolution compared to the other preset and also compared to 1080p. For high and medium bitrates at 1080p and 540p the quality is similar to preset 1, but the MOS values exhibit a wider spread.
 However, we see that especially for the lowest bitrate version the quality of "expert" preset (2) degrades, which we could already predict from our \textit{VMAF} scores after encoding in Fig. \ref{fig:vmaf:encoded}.
 
+\subsubsection{Bitrate savings}
 \begin{figure}[htb!]
 	\centering
 	\includegraphics[width=3.5in]{bitrate_savings}
@@ -64,7 +65,7 @@ However, we see that especially for the lowest bitrate version the quality of "e
 	\label{fig:result:quality_difference}
 \end{figure}
 
-We further look at the bitrate differences between the presets in Figure \ref{fig:result:bitrate_savings}. It shows the relative bitrate savings for each target bitrate. The hatched bars show where the "expert" preset degrades the subjective quality below that of , which happens mainly for the 540p and 1080p resolutions. The 2160p versions of the content largely benefit from the "expert" preset with high subjective quality at significantly lower bitrates.
+We further look at the bitrate differences between the presets in Figure \ref{fig:result:bitrate_savings}. It shows the relative bitrate savings for each target bitrate. The hatched bars show where the "expert" preset degrades the subjective quality , which happens mainly for the 540p and 1080p resolutions. The 2160p versions of the content largely benefit from the "expert" preset with high subjective quality at significantly lower bitrates.
 
 
 \begin{figure}[htb!]
@@ -74,5 +75,7 @@ We further look at the bitrate differences between the presets in Figure \ref{fi
 	\label{fig:result:correlation_vmaf_mos}
 \end{figure}
 
+
+\subsubsection{Correlation of MOS and average \textit{VMAF} scores}
 The Pearson product-moment correlation between user-rating based \textit{MOS} and the precomputed \textit{VMAF} scores is strong at 93\% (see fig. \ref{fig:result:correlation_vmaf_mos}).
 \\
