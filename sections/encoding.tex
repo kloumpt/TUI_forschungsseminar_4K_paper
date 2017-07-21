@@ -1,7 +1,7 @@
 As one of the focus points of this paper the choice of encoding parameters and the video preprocessing are of main importance. This section will first cover the two different encoding presets, go over the method which is used to derive the target bitrates and finalize with a description of the process automation.
 
 \subsubsection{Encoding Presets}
-We use the open x265 encoder for our experiment as it offers good performance and integration in the FFmpeg toolchain. Two different presets are used for the sequence encodings, a "na\"{\i}ve" (P.1) and an "expert" preset (P.2). The "na\"{\i}ve" preset is a simple \textit{CBR} (Constant Bitrate) encoding, whereas the "expert" preset is a 2-pass encoding with a Quality-Control pass followed by a Bitrate-Control pass.  Every sequence is encoded with both presets at 3 resolutions (540p, 1080p, 2160p) and 3 bitrates for each resolution. The following section goes into detail on how we select those bitrates.
+We use the open x265 encoder for our experiment as it offers good performance and integration in the FFmpeg toolchain. Two different presets are used for the sequence encodings, a "na\"{\i}ve" (1) and an "expert" preset (2). The "na\"{\i}ve" preset is a simple \textit{CBR} (Constant Bitrate) encoding, whereas the "expert" preset is a 2-pass encoding with a Quality-Control pass followed by a Bitrate-Control pass.  Every sequence is encoded with both presets at 3 resolutions (540p, 1080p, 2160p) and 3 bitrates for each resolution. The following section goes into detail on how we select those bitrates.
 
 \begin{figure}[htb!]
 	\centering
@@ -24,7 +24,7 @@ The resulting \textit{VMAF} scores exhibit an overlap between different resoluti
 	\label{fig:vmaf:encoded}
 \end{figure}
 
-The average \textit{VMAF} scores of the two presets at the chosen bitrates can be seen in Figure \ref{fig:vmaf:encoded}. The target bitrates can be seen in the background again. The scores of the "expert" preset are consistently higher than the ones for the "na\"{\i}ve" preset at matching bitrates. Furthermore the "expert" preset saves bitrate by resorting to an acceptable level of quality, while the "na\"{\i}ve" presets bitrates are very close to the targets.
+The average \textit{VMAF} scores of the two presets at the chosen bitrates can be seen in Figure \ref{fig:vmaf:encoded}. The respective target bitrates can be seen in the background again. The scores of the "expert" preset (2) are consistently higher than the ones for the "na\"{\i}ve" preset (1) at matching target bitrates. Furthermore, the "expert" preset saves bitrate by resorting to an acceptable level of quality, while the "na\"{\i}ve" presets bitrates are very close to the targets. However, we can see that the preset two sometimes reduces the bitrate too far so that the average score is well below preset one. This happens especially for the lowest 1080p bitrate and less so for the 540p encodings.
 
 
 \begin{figure}[bht!]

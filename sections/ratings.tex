@@ -38,10 +38,14 @@ In Figure \ref{fig:result:mos_per_sequence} we show the \textit{MOS} for each se
 	\label{fig:result:correlation_bitrate_mos}
 \end{figure*}
 
+The Distribution of \textit{MOS} values for each preset at different resolutions is shown in Figure \ref{fig:result:correlation_bitrate_mos}.
+The "expert" preset quality is higher at 2160p resolution compared to the other preset and also compared to 1080p. For high and medium bitrates at 1080p and 540p the quality is similar to preset 1, but the MOS values exhibit a wider spread.
+However, we see that especially for the lowest bitrate version the quality of "expert" preset (2) degrades, which we could already predict from our \textit{VMAF} scores after encoding in Fig. \ref{fig:vmaf:encoded}.
+
 \begin{figure}[htb!]
 	\centering
 	\includegraphics[width=3.5in]{bitrate_savings}
-	\caption{}
+	\caption{Relative bitrate difference of "expert" preset compared to "na\"{\i}ve" preset at all target bitrates. For target bitrates with added hatching the "expert" preset MOS is smaller than the "na\"{\i}ve" preset MOS.}
 	\label{fig:result:bitrate_savings}
 \end{figure}
 \begin{figure}[htb!]
@@ -51,11 +55,7 @@ In Figure \ref{fig:result:mos_per_sequence} we show the \textit{MOS} for each se
 	\label{fig:result:quality_difference}
 \end{figure}
 
-The Distribution of \textit{MOS} values for each preset at different resolutions is shown in Figure \ref{fig:result:correlation_bitrate_mos}.
-The "expert" preset is not using all available bitrate in critical low-bitrate situations. (Drop-Off for 1080p \textit{MOS}), can already be predicted from VMAF plot.
-
-
-
+We further look at the bitrate differences between the presets in Figure \ref{fig:result:bitrate_savings}. It shows the relative bitrate savings for each target bitrate. The hatched bars show where the "expert" preset degrades the subjective quality below that of , which happens mainly for the 540p and 1080p resolutions. The 2160p versions of the content largely benefit from the "expert" preset with high subjective quality at significantly lower bitrates.
 
 
 \begin{figure}[htb!]
