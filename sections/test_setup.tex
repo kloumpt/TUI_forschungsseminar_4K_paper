@@ -19,32 +19,27 @@ The steps performed by a participants during a rating session can be seen in the
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=3.5in]{rating_workflow}
-	\caption{Detailed steps of the rating workflow}
+	\caption{Detailed steps of a rating session}
 	\label{fig:workflow:state_machine}
 \end{figure}
 
 \subsubsection{Additional collected data}
 In order to gain more knowledge about the users behaviour, additional data is collected from the participants.
 
-One of the suggestions of the ITU recommendation paper being the usage of several test questions in addition to the ratings \cite{rec1998p}, the following questions have been asked at the end of each rating session:
-
+One of the suggestions of the ITU recommendation paper being the usage of several test questions in addition to the ratings \cite{rec1998p}, the following points have been assessed at the end of each rating session:
 \begin{itemize}
-	\item Presence of blocky artefacts
-	\item Visible bands of colour
-	\item Smoothness of the playback
-	\item Have you seen 4K content before?
-	\item Have you seen content on a 4k screen before?
-	\item How sure were you about the rating that you provided?
+	\item Impact of the following points on rating 
+	\begin{itemize}
+		\item Presence of blocky artefacts
+		\item Visible bands of colour
+		\item Smoothness of the playback
+	\end{itemize}
+	\item Exposure to 4k content and devices
+	\item Confidence of the participant in his ratings
 \end{itemize}
 
+The idea behind these question is dual as they may translate how users perceive video features as well as how users may clearly express their perceptions. As it has been noticed in previous experiments and in discussions with test participants: users may still rate using a different scales, thus spreading the final MOS or falsely being classified as outlier when their ratings may only represent a shift from the overall population. 
 
-
-
-These idea behind these question is dual as these questions may translate how users percieve/are sensitive to video features as well as how users may clearly express their perceptions. As it has already been noticed in previous experiments and in discussions with test participants: users may still rate using a different scales, thus spreading the final MOS or falsely being classified as outlier when their ratings may only represent a shift from the overall population. 
-
-Moreover, mouse interactions have been collected during the rating of each sequence. The intent behind this is that as the MOS scale doesn't allow detailed answers some participants may hesitate between two answers and change their answers or hover with their mouse around some answers. Also, answering speed, which could be an indicator of a participant skipping answers or to the contrary being strongly confident of his answers. We believe that several informations can be extracted from these kind of behaviours:
-\begin{itemize}
-	\item Confidence in the participant sequence rating
-	\item Confidence in the participant overall rating
-	\item Intermediate scores (eg: 4.5)
-\end{itemize}
+Moreover, mouse interactions have been collected during the rating of each sequence. The intent behind this is that as the MOS scale forbids detailed answers some participants may hesitate between two answers and change their final answer or hover over several ones before making his final choice.
+Answering speed, which could be an indicator of a participant skipping answers or to the contrary being strongly confident in his answers is a feature that has been thought relevant to analyse. 
+We believe that informations such as confidence in the participants ratings or more precise scores can be extracted from these previously described behaviours.
